@@ -66,6 +66,12 @@ public class DoublyEndedQueue {
 			rear--;
 		}
 	}
+	public void display() {
+		for(int i=front ; i<=rear ; i++) {
+			System.out.println("  "+queue[i]);
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -76,12 +82,14 @@ public class DoublyEndedQueue {
 		doublyEndedQueue.rear_insert();
 		doublyEndedQueue.rear_insert();
 		doublyEndedQueue.rear_insert();
+		doublyEndedQueue.display();
 		doublyEndedQueue.rear_insert();
 		doublyEndedQueue.front_delete();
+		doublyEndedQueue.display();
 		doublyEndedQueue.front_delete();
+		doublyEndedQueue.display();
 		doublyEndedQueue.front_delete();
-		doublyEndedQueue.rear_delete();
-		doublyEndedQueue.rear_delete();
+		doublyEndedQueue.display();
 	}
 
 }
