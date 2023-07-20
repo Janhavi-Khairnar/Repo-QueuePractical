@@ -13,7 +13,7 @@ public class DoublyEndedQueue {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	public void front_enqueue() {
+	public void front_insert() {
 		if(front == -1 && rear == -1) {
 				front = rear = 0;
 				System.out.println("Enter the Numeber :");
@@ -33,11 +33,33 @@ public class DoublyEndedQueue {
 		}
 	}
 	
+	public void rear_insert() {
+		if(front == -1 && rear == -1) {
+				front = rear = 0;
+				System.out.println("Enter the Number :");
+				num = sc.nextInt();
+				queue[front] = num;
+		} 	else if(rear == queue.length - 1) {
+				System.out.println("Rear is reached at end. So, we can not insert data now.");
+		}	else {
+				rear++;
+				System.out.println("Enter the Number :");
+				num = sc.nextInt();
+				queue[rear] = num;
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 		
 		DoublyEndedQueue doublyEndedQueue = new DoublyEndedQueue();
-		doublyEndedQueue.front_enqueue();
-		doublyEndedQueue.front_enqueue();
+		doublyEndedQueue.front_insert();
+		doublyEndedQueue.front_insert();
+		doublyEndedQueue.rear_insert();
+		doublyEndedQueue.rear_insert();
+		doublyEndedQueue.rear_insert();
+		doublyEndedQueue.rear_insert();
+		doublyEndedQueue.rear_insert();
 	}
 
 }
