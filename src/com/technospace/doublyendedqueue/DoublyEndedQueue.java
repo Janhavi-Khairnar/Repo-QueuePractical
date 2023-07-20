@@ -58,6 +58,15 @@ public class DoublyEndedQueue {
 		}
 	}
 	
+	public void rear_delete() {
+		if(front == -1 && rear == -1) {
+			System.out.println("Queue is empty. So, can not delete item.");
+		}	else{
+			System.out.println("The item to be deleted :"+queue[rear]);
+			rear--;
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		DoublyEndedQueue doublyEndedQueue = new DoublyEndedQueue();
@@ -71,6 +80,8 @@ public class DoublyEndedQueue {
 		doublyEndedQueue.front_delete();
 		doublyEndedQueue.front_delete();
 		doublyEndedQueue.front_delete();
+		doublyEndedQueue.rear_delete();
+		doublyEndedQueue.rear_delete();
 	}
 
 }
