@@ -36,15 +36,21 @@ public class QueueClass {
 		}
 	}
 	
+	public void display() {
+		for(int i=front ; i<=rear ; i++) {
+			System.out.println(queue[i]);
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		QueueClass queueClass = new QueueClass();
 		queueClass.enqueue();
 		queueClass.enqueue();
 		queueClass.enqueue();
+		queueClass.display();
 		queueClass.dequeue();
-		queueClass.dequeue();
-		
+		queueClass.display();
 	}
 
 }
