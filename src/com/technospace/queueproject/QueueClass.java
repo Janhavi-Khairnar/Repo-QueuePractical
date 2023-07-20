@@ -12,6 +12,7 @@ public class QueueClass {
 	Scanner sc = new Scanner(System.in);
 	
 	public void enqueue() {
+		System.out.println("Before Enqueue \n Front :"+front+" \tRear :"+rear);
 		if(front == -1) {
 			front = rear = 0;
 			System.out.println("Enter the Number : ");
@@ -25,6 +26,7 @@ public class QueueClass {
 			num = sc.nextInt();
 			queue[rear] = num;
 		}
+		System.out.println("After Enqueue \n Front :"+front+"\t Rear :"+rear);
 	}
 	
 	public void dequeue() {
@@ -45,12 +47,32 @@ public class QueueClass {
 	public static void main(String[] args) {
 		
 		QueueClass queueClass = new QueueClass();
-		queueClass.enqueue();
-		queueClass.enqueue();
-		queueClass.enqueue();
-		queueClass.display();
-		queueClass.dequeue();
-		queueClass.display();
+		
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		
+		do{
+			System.out.println("### Queue Operation ###");
+			System.out.println("1)Enque \n2)Deque \n3)Dispaly");
+			
+			System.out.println("Enter the Operation :");
+			choice = sc.nextInt();
+			
+			switch(choice) {
+			case 1:
+				queueClass.enqueue();
+				break;
+			case 2:
+				queueClass.dequeue();
+				break;
+			case 3:
+				queueClass.display();
+				break;
+			default:
+				System.out.println("You are enter the invalid number.");
+				break;
+			}
+		}while(choice != 4);
 	}
 
 }
