@@ -25,7 +25,15 @@ public class QueueClass {
 			num = sc.nextInt();
 			queue[rear] = num;
 		}
-		
+	}
+	
+	public void dequeue() {
+		if(front == -1 || front == queue.length) {
+			System.out.println("Queue is empty.");
+		} else{
+			System.out.println("Element is deleted :"+queue[front]);
+			front++;
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -34,6 +42,8 @@ public class QueueClass {
 		queueClass.enqueue();
 		queueClass.enqueue();
 		queueClass.enqueue();
+		queueClass.dequeue();
+		queueClass.dequeue();
 		
 	}
 
