@@ -1,5 +1,6 @@
 package com.technospace.doublyendedqueue;
 
+import java.awt.Choice;
 import java.util.Scanner;
 
 import com.technospace.queueproject.QueueClass;
@@ -76,20 +77,40 @@ public class DoublyEndedQueue {
 	public static void main(String[] args) {
 		
 		DoublyEndedQueue doublyEndedQueue = new DoublyEndedQueue();
-		doublyEndedQueue.front_insert();
-		doublyEndedQueue.front_insert();
-		doublyEndedQueue.rear_insert();
-		doublyEndedQueue.rear_insert();
-		doublyEndedQueue.rear_insert();
-		doublyEndedQueue.rear_insert();
-		doublyEndedQueue.display();
-		doublyEndedQueue.rear_insert();
-		doublyEndedQueue.front_delete();
-		doublyEndedQueue.display();
-		doublyEndedQueue.front_delete();
-		doublyEndedQueue.display();
-		doublyEndedQueue.front_delete();
-		doublyEndedQueue.display();
+		
+		int choice;
+		
+		Scanner sc = new Scanner(System.in);
+		do{
+			System.out.println("### Operation List ###");
+			System.out.println("1)Insert From Front \n2)Insert From Rear \n3)Delete From Front \n4)Delete From Rear \n5)Display \n6)Exit");
+			System.out.println("Enter the Operation Number :");
+			choice = sc.nextInt() ;
+			
+			switch (choice) {
+			case 1:
+				doublyEndedQueue.front_insert();
+				break;
+			case 2:
+				doublyEndedQueue.rear_insert();
+				break;
+			case 3:
+				doublyEndedQueue.front_delete();
+				break;
+			case 4:
+				doublyEndedQueue.rear_delete();
+				break;
+			case 5:
+				doublyEndedQueue.display();
+				break;
+			case 6:
+				System.out.println("Exit!!!");
+				break;
+			default:
+				System.out.println("Invalid Operation Number.");
+				break;
+			}
+		}while(choice != 7);
 	}
 
 }
